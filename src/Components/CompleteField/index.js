@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const completedTasks = () => {
+const CompletedTaskss = ({ savedInputs, setSavedInputs }) => {
+  const [completedTasks, setCompletedTasks] = useState([]);
+
+  useEffect(() => {
+    const storedCompletedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+    setCompletedTasks(storedCompletedTasks);
+    setSavedInputs([...savedInputs]);
+  }, []);
+
   return (
     <>
-      <p>completed completedTasks</p>
+      {completedTasks.length > 0 ? (
+        <ul>
+          {completedTasks.map((task) => (
+            <li key={task.id}>{task.text}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No completed tasks found in local storage.</p>
+      )}
     </>
   );
 };
 
-export default completedTasks;
+export default CompletedTaskss;

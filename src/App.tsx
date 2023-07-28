@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import InputField from "./Components/InputField";
 import Alltasks from "./Components/AllField";
+import TaskManager from "./Components/AllField/TaskMange";
+import CompletedTaskss from "./Components/CompleteField";
 
 interface SavedInput {
   id: string;
@@ -57,17 +59,20 @@ function App() {
         <div>
           {Alltask ? (
             <>
-              <Alltasks savedInputs={savedInputs} />
+              {/* <Alltasks savedInputs={savedInputs} /> */}
+              <TaskManager savedInputs={savedInputs} setSavedInputs={setSavedInputs}/>
             </>
           ) : null}
+          
           {Activetast ? (
             <>
               <p>hello world</p>
             </>
           ) : null}
+
           {Completedtast && (
             <>
-              <p>hello world</p>
+              <CompletedTaskss savedInputs={savedInputs} setSavedInputs={setSavedInputs} />
             </>
           )}
         </div>

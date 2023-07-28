@@ -9,29 +9,6 @@ const InputField = ({ savedInputs, setSavedInputs }) => {
     setInputText(event.target.value);
   };
 
-  // const handleSaveInput = () => {
-  //   try {
-  //     if (inputText.trim() !== "") {
-  //       localStorage.setItem("userInput", inputText);
-  //       console.log("Input saved to local storage.");
-  //       setInputText("");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error saving input to local storage:", error);
-  //   }
-  // };
-
-  // const handleSaveInput = () => {
-  //   if (inputText.trim() !== "") {
-  //     setSavedInputs([...savedInputs, inputText]);
-  //     setInputText("");
-  //     localStorage.setItem(
-  //       "userInputs",
-  //       JSON.stringify([...savedInputs, inputText])
-  //     );
-  //   }
-  // };
-
   const handleSaveInput = () => {
     if (inputText.trim() !== '') {
       const newInput = {
@@ -44,6 +21,7 @@ const InputField = ({ savedInputs, setSavedInputs }) => {
 
       // Save all inputs to local storage
       localStorage.setItem('userInputs', JSON.stringify([...savedInputs, newInput]));
+      localStorage.setItem('ActiveTask', JSON.stringify([...savedInputs, newInput]));
     }
   };
 
