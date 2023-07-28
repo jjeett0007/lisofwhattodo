@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import InputField from "./Components/InputField";
-import Alltasks from "./Components/AllField";
 import TaskManager from "./Components/AllField/TaskMange";
 import CompletedTaskss from "./Components/CompleteField";
+import ActiveTask from "./Components/ActiveComp";
 
 interface SavedInput {
   id: string;
@@ -66,7 +66,7 @@ function App() {
           
           {Activetast ? (
             <>
-              <p>hello world</p>
+              <ActiveTask savedInputs={savedInputs} setSavedInputs={setSavedInputs}/>
             </>
           ) : null}
 
