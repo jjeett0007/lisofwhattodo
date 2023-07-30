@@ -31,14 +31,14 @@ export default Alltasks;
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
-  border: 1px solid black;
+  gap: 15px;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: aliceblue;
+  background-color: #ffffff;
 
   input.larger{
     width: 30px;
     height: 30px;
+    margin-left: 10px;
   }
 `;
