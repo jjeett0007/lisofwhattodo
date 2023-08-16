@@ -30,15 +30,6 @@ const InputField = ({ savedInputs, setSavedInputs }) => {
       <Wrapper>
         <InputArea type="text" value={inputText} onChange={handleInputChange} />
         <button onClick={handleSaveInput}>Add</button>
-        {/* {savedInputs.length > 0 ? (
-          <ul>
-            {savedInputs.map((input) => (
-              <li key={input.id}>{input.text}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>No saved inputs yet.</p>
-        )} */}
       </Wrapper>
     </>
   );
